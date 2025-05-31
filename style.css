@@ -1,5 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Delius&display=swap');
+
+:root {
+    --cor-background-pagina: rgb(171, 158, 231);
+    --cor-cartao-fundo: rgb(217, 196, 255);
+    --cor-h3-fundo: rgb(197, 205, 250);
+    --cor-fundo-footer: rgba(0, 0, 0, 0.425);
+    --cor-texto-footer: rgb(238, 223, 223);
+    --text-color: #DBE4EF;
+    --card-front-color: #144480;
+    --card-back-color: #00F4BF;
+    --font-principal: "Delius", cursive;
+}
+
 body {
-    background-color:  rgb(171, 158, 231);
+    background-color:  var(--cor-background-pagina);
     font-family: "Delius";
 }
 
@@ -9,7 +23,7 @@ body {
 
 .cartao {
     margin: 1rem 1rem;
-    background-color: rgb(217, 196, 255);
+    background-color: var(--cor-cartao-fundo);
     height: 20rem;
     flex-grow: 1;
     flex-basis: calc(33% - 6rem);
@@ -21,13 +35,13 @@ body {
 }
 
 .cartao__conteudo h3 {
-    background-color: rgb(197, 205, 250);
+    background-color: var(--cor-h3-fundo);
     text-align: left;
     padding: 0.5rem;
     position: absolute;
     margin: 0.6rem;
     border-radius: 0.6rem;
-    font-size: 1vw;
+    font-size: 1vw; border: 2px solid var(--cor-background-pagina);
 }
 
 .cartao__conteudo p {
@@ -35,10 +49,20 @@ body {
     padding: 2rem;
 }
 
+.cartao__conteudo__pergunta p {
+    color: var(--text-color);
+    font-weight: 500;
+}
+
+.cartao__conteudo__resposta p {
+    color: var(--card-back-color);
+    font-weight: 700;
+}
+
 
 footer {
-    background-color: black;
-    color: rgb(235, 230, 230);
+    background-color: var(--cor-fundo-footer);
+    color: var(--cor-texto-footer);
     position: fixed;
     bottom: 0;
     width: 100%;
