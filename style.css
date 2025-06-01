@@ -12,26 +12,76 @@
     --font-principal: "Delius", cursive;
 }
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
-    background-color:  var(--cor-background-pagina);
-    font-family: "Delius";     background: url(https://offloadmedia.feverup.com/saopaulosecreto.com/wp-content/uploads/2024/07/22153505/2149876021-1024x683.jpg);
+    background-color: var(--cor-background-pagina);
+    font-family: var(--font-principal);
+    background-image: url(https://offloadmedia.feverup.com/saopaulosecreto.com/wp-content/uploads/2024/07/22153505/2149876021-1024x683.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    padding-bottom: 2.5rem;
+    color: #333;
+}
+
+header {
+    text-align: center;
+    padding: 2rem 1rem;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+header p {
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: 0 auto;
 }
 
 #container {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 960px;
+    margin: 20px auto;
+    padding: 10px;
+    gap: 1rem;
 }
 
 .cartao {
-    margin: 1rem 1rem;
+    margin: 1rem;
     background-color: var(--cor-cartao-fundo);
     height: 20rem;
     flex-grow: 1;
-    flex-basis: calc(33% - 6rem);
+    flex-basis: calc(33% - 2rem);
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    perspective: 1000px;
 }
 
 .cartao__conteudo {
     text-align: center;
     height: 100%;
+    width: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.6s;
+}
+
+.cartao:hover .cartao__conteudo {
+    transform: rotateY(180deg);
 }
 
 .cartao__conteudo h3 {
@@ -39,26 +89,53 @@ body {
     text-align: left;
     padding: 0.5rem;
     position: absolute;
-    margin: 0.6rem;
+    top: 0.6rem;
+    left: 0.6rem;
+    margin: 0;
     border-radius: 0.6rem;
-    font-size: 1vw; border: 2px solid var(--cor-background-pagina);
+    font-size: clamp(0.8rem, 1.2vw + 0.5rem, 1.1rem);
+    border: 2px solid var(--cor-background-pagina);
+    color: var(--text-color);
+    backface-visibility: hidden;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: calc(100% - 1.2rem);
+    z-index: 2;
 }
 
 .cartao__conteudo p {
-    margin-top: 1rem;
+    margin-top: 4rem;
     padding: 2rem;
 }
 
-.cartao__conteudo__pergunta p {
-    color: var(--text-color);
-    font-weight: 500;
+.cartao__conteudo__pergunta,
+.cartao__conteudo__resposta {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    text-align: center;
 }
 
-.cartao__conteudo__resposta p {
+.cartao__conteudo__pergunta {
+    color: var(--text-color);
+    font-weight: 700;
+    font-size: 1.4rem;
+    background-color: var(--card-front-color);
+}
+
+.cartao__conteudo__resposta {
     color: var(--card-back-color);
     font-weight: 700;
+    font-size: 1.1rem;
+    background-color: var(--cor-cartao-fundo);
+    transform: rotateY(180deg);
 }
-
 
 footer {
     background-color: var(--cor-fundo-footer);
@@ -67,6 +144,9 @@ footer {
     bottom: 0;
     width: 100%;
     height: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 footer p {
