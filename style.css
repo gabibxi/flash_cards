@@ -9,7 +9,7 @@
     --text-color: #b8d0ec;
     --card-front-color: #4e0877;
     --card-back-color: #d9a1e7;
-    --font-principal: "Delius", cursive; --cor-pergunta:rgb(194, 162, 253);
+    --font-principal: "Delius", cursive; --cor-pergunta:rgb(185, 157, 252);
 }
 
 * {
@@ -95,7 +95,7 @@ header p {
     border-radius: 0.6rem;
     font-size: clamp(0.8rem, 1.2vw + 0.5rem, 1.1rem);
     border: 2px solid var(--cor-background-pagina);
-    color: var(--text-color);
+    color: var(--cor-pergunta);
     backface-visibility: hidden;
     white-space: nowrap;
     overflow: hidden;
@@ -123,7 +123,7 @@ header p {
 }
 
 .cartao__conteudo__pergunta {
-    color: var(--cor-pergunta);
+    color: var(--text-color);
     font-weight: 700;
     font-size: 1.4rem;
     background-color: var(--card-front-color);
