@@ -9,7 +9,7 @@
     --text-color: #b8d0ec;
     --card-front-color: #4e0877;
     --card-back-color: #d9a1e7;
-    --font-principal: "Delius", cursive;
+    --font-principal: "Delius", cursive; --cor-pergunta:rgb(194, 162, 253);
 }
 
 * {
@@ -60,7 +60,7 @@ header p {
 
 .cartao {
     margin: 1rem;
-    background-color: var(--cor-cartao-fundo);
+    background-color: var(--cor-pergunta);
     height: 20rem;
     flex-grow: 1;
     flex-basis: calc(33% - 2rem);
