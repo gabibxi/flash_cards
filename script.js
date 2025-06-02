@@ -16,6 +16,10 @@ function criaCartao(categoria, pergunta, resposta) {
         </div>
     `;
 
+    article.addEventListener('click', () => {
+        article.classList.toggle('active');
+    });
+
     container.appendChild(article);
 }
 
